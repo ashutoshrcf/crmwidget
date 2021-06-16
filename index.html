@@ -6,7 +6,6 @@
     <title>CRM@JLR</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
       function openUrl() {
@@ -20,7 +19,7 @@
         var inputId = document.getElementById('customerID2').value;
         var inputVin = document.getElementById('vin').value;
         window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/vehicle/' + inputVin + '/purchase-and-ownership', '_blank');
-        document.getElementById("formId").reset();
+        document.getElementById("formID").reset();
         return false;
       }
 
@@ -36,36 +35,18 @@
           <fieldset>
             <legend><span class="number">1</span>Search by Customer ID</legend>
             <input type="text" id="customerID1" name="customerID_1" placeholder="Customer ID">
-            <button type="submit" onclick="openUrl()" id="submitBtn1">Get Customer ID</button>
+            <button type="button" onclick="openUrl()" id="submitBtn1">Get Customer ID</button>
           </fieldset>
 
           <fieldset>
             <legend><span class="number">2</span>Enter Customer ID and VIN</legend>
             <input type="text" id="customerID2" name="customerID_2" placeholder="Customer ID">
             <input type="text" id="vin" name="vin_user" placeholder="VIN">
-            <button type="submit" onclick="getVin()" id="submitBtn2">Get VIN</button>
+            <button type="button" onclick="getVin()" id="submitBtn2">Get VIN</button>
+          </fieldset>
         </form>
       </div>
     </div>
-
-    <script>
-      (function() {
-        $('#username').keyup(function() {
-          var empty = false;
-          $('#username').each(function() {
-            if ($(this).val() == '') {
-              empty = true;
-            }
-          });
-          if (empty) {
-            $('#submitBtn').attr('disabled', 'disabled');
-          } else {
-            $('#submitBtn').removeAttr('disabled');
-          }
-        });
-      })()
-
-    </script>
   </body>
 
 </html>
