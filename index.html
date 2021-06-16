@@ -1,52 +1,34 @@
 <html>
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM@JLR</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-      function openUrl() {
-        var inputId = document.getElementById('customerID1').value;
-        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/overview', '_blank');
-        document.getElementById("formID").reset();
-        return false;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM@JLR</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="myScript.js"></script>
+</head>
 
-      function getVin() {
-        var inputId = document.getElementById('customerID2').value;
-        var inputVin = document.getElementById('vin').value;
-        window.open('https://crmprebau.svcrm.jlrcloud.com/crm_jlr(bD1lbiZjPTEwMA==)/main.htm#!/customer/' + inputId + '/vehicle/' + inputVin + '/purchase-and-ownership', '_blank');
-        document.getElementById("formID").reset();
-        return false;
-      }
-
-    </script>
-  </head>
-
-  <body>
-    <div class="row">
-      <div class="col-md-12">
-        <form id="formID">
-          <h1>Search information from CRM@JLR</h1>
-
-          <fieldset>
-            <legend><span class="number">1</span>Search by Customer ID</legend>
-            <input type="text" id="customerID1" name="customerID_1" placeholder="Customer ID">
-            <button type="button" onclick="openUrl()" id="submitBtn1">Get Customer ID</button>
-          </fieldset>
-
-          <fieldset>
-            <legend><span class="number">2</span>Enter Customer ID and VIN</legend>
-            <input type="text" id="customerID2" name="customerID_2" placeholder="Customer ID">
-            <input type="text" id="vin" name="vin_user" placeholder="VIN">
-            <button type="button" onclick="getVin()" id="submitBtn2">Get VIN</button>
-          </fieldset>
-        </form>
-      </div>
+<body>
+  <div class="row">
+    <div class="col-md-12">
+      <form id="formID">
+        <h1>Search information from CRM@JLR</h1>
+        <fieldset>
+          <legend><span class="number">1</span>Search by Customer ID</legend>
+          <input type="text" id="customerID1" name="customerID_1" placeholder="Customer ID">
+          <button type="button" onclick="openUrl()" id="submitBtn1" disabled="disabled">Get Customer ID</button>
+        </fieldset>
+        <fieldset>
+          <legend><span class="number">2</span>Enter Customer ID and VIN</legend>
+          <input type="text" id="customerID2" name="customerID_2" placeholder="Customer ID">
+          <input type="text" id="vin" name="vin_user" placeholder="VIN">
+          <button type="button" onclick="getVin()" id="submitBtn2" disabled="disabled">Get VIN</button>
+        </fieldset>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
 
 </html>
