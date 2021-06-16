@@ -43,7 +43,6 @@ select {
   margin-bottom: 30px;
 }
 
-
 button {
   padding: 19px 39px 18px 39px;
   color: #FFF;
@@ -56,6 +55,13 @@ button {
   border: 1px solid #708DFD;
   border-width: 1px 1px 3px;
   margin-bottom: 10px;
+}
+
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 
 fieldset {
@@ -93,9 +99,7 @@ label.light {
 }
 
 @media screen and (min-width: 480px) {
-
   form {
     max-width: 480px;
   }
-
 }
